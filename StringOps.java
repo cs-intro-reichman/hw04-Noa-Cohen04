@@ -22,21 +22,96 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        // int arr [] = {1,2,3};
+        // //System.out.println(arr);
+        // int[] arr1 = allIndexOf("MMMM" ,'M');
+        // for (int i = 0; i<arr1.length; i++)
+        // {
+        //     System.out.println(arr1[i]);
+        // }
+        // System.out.println(arr1);
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String ans = "";
+        int i = 0;
+        while (i < string.length()) {
+         char ch = string.charAt(i);
+         if (ch == 'A' || ch == 'E'|| ch == 'O'||ch == 'I'||ch == 'U'||ch == 'a' || ch == 'e'|| ch == 'o'||ch == 'i'||ch == 'u'){
+            if (ch == 'a' || ch == 'e'|| ch == 'o'||ch == 'i'||ch == 'u'){
+                ans = ans  + (char) (string.charAt(i) - 32);
+            }
+            else
+                ans = ans + ch;
+         }
+         else{
+            if ((ch >= 'A') && (ch <= 'Z')) {
+            ans = ans  + (char) (string.charAt(i) + 32);
+            //i++;
+            } 
+            else {
+            ans = ans + ch;
+            }
+         
+         }
+         i++;
+
+        }
+        return ans;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        String ans = "";
+        int i = 0;
+        while (i< string.length()){
+            char ch = string.charAt(i);
+            if (ch != ' '){
+                if (ans != ""){
+                    if (string.charAt(i-1) == ' ')
+                        ans = ans + upperCase(ch);
+                    else
+                        ans = ans + lowerCase(ch);
+                }
+                else
+                    ans = ans + lowerCase(ch);
+            }
+            i++;
+        }
+        return ans;
     }
 
+        public static char lowerCase(char ch) {
+         if ((ch >= 'A') && (ch <= 'Z')) {
+            return (char) (ch + 32);
+         } 
+         return ch;
+        }
+        public static char upperCase(char ch) {
+         if ((ch >= 'a') && (ch <= 'z')) {
+            return (char) (ch - 32);
+         } 
+         return ch;
+        }
+
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int[] arr;
+        int i = 0;
+        int counter = 0;
+        while (i<string.length()){
+            if(string.charAt(i)== chr)
+                counter++;
+            i++;
+        }
+        arr = new int[counter];
+        counter =0;
+        i=0;
+        while (i<string.length()){
+            if(string.charAt(i)== chr){
+                arr[counter] = i;
+                counter ++;
+            }
+            i++;
+        }
+        return arr;
     }
 }
