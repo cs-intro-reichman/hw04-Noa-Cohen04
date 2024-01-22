@@ -7,17 +7,17 @@ public class ArrayOps {
     public static int findMissingInt (int [] array) {
         int n = array.length;
         int missNum =-1;
-            for (int i=0 ; i<=n; i++){
-                for(int j = 0; j<n ; j++){
-                    if (i == array[j]){
-                        break;
-                    }
-                    if (n-1 == j){
-                        missNum = i;
-                      //  break;
-                    }
+        for (int i=0 ; i<=n; i++){ // #feedback - note the indentation here.
+            for(int j = 0; j<n ; j++){
+                if (i == array[j]){
+                    break;
                 }
-            }   
+                if (n-1 == j){
+                    missNum = i;
+                  //  break;
+                }
+            }
+        }   
         return missNum;
     }
 
@@ -41,7 +41,7 @@ public class ArrayOps {
                 if (array[i] != firstMax){
                     secondMax = array[i];
                 }
-                if (array[i] == firstMax){
+                if (array[i] == firstMax){ // #feedback - you can use "else" here.
                     counter++;
                 }
             }
@@ -77,6 +77,7 @@ public class ArrayOps {
         for (int i = 0; i<array1.length;i++)
         {
             if (array1[i]==nun){
+                // #feedback - you can return true directly here instead of setting the variable.
                 isIn = true;
                 break;
             }
