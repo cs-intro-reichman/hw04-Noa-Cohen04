@@ -37,6 +37,7 @@ public class StringOps {
         int i = 0;
         while (i < string.length()) {
          char ch = string.charAt(i);
+            // #feedback - to make the code a bit cleaner, you can extract some code to helper funciton, for example isVowel.
          if (ch == 'A' || ch == 'E'|| ch == 'O'||ch == 'I'||ch == 'U'||ch == 'a' || ch == 'e'|| ch == 'o'||ch == 'i'||ch == 'u'){
             if (ch == 'a' || ch == 'e'|| ch == 'o'||ch == 'i'||ch == 'u'){
                 ans = ans  + (char) (string.charAt(i) - 32);
@@ -47,6 +48,7 @@ public class StringOps {
          else{
             if ((ch >= 'A') && (ch <= 'Z')) {
             ans = ans  + (char) (string.charAt(i) + 32);
+            // #feedback please remove unrelated comments when you submit the exercises.
             //i++;
             } 
             else {
@@ -75,11 +77,13 @@ public class StringOps {
                 else
                     ans = ans + lowerCase(ch);
             }
+            // #feedback - consider using a for loop here instead of explicitly increasing the index every iteration.
             i++;
         }
         return ans;
     }
 
+    // #feedback - please note the indentation here and throughout this file.
         public static char lowerCase(char ch) {
          if ((ch >= 'A') && (ch <= 'Z')) {
             return (char) (ch + 32);
